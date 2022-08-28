@@ -19,7 +19,7 @@ const createUser = (req, res) => {
   const user = new User({ login, password });
   user
     .save()
-    .then((pos) => res.status(200))
+    .then((pos) => res.status(200).json(pos))
     .catch((err) => res.status(500));
 };
 
